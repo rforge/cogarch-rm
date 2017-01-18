@@ -1,0 +1,9 @@
+Package: COGARCH.rm
+Title: Portfolio selection with Multivariate COGARCH(p,q) models
+Version: 0.1.0
+Depends: R(> 2.10.0), yuima, fastICA, quantmod, cluster, rugarch
+Author: Francesco Bianchi, Lorenzo Mercuri, Edit Rroji
+Maintainer: Francesco Bianchi <francesco.bianchi04@icatt.it>
+Description: Portfolio selection with ICA-COGARCH based homogeneous
+  on risk measures and its further development.
+License: GPL-3
