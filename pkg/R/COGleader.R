@@ -1,6 +1,5 @@
-COGleader<-function(Data, NumbClust, type="STS", TITLE = "",
-                    freq=1/252){
-  dataPriceAll<-Data
+COGleader <- function(Data, NumbClust, type="STS", TITLE = "", freq=1/252){
+  dataPriceAll <- Data
   AssetNames <- colnames(dataPriceAll@original.data)
   namesIndex <- AssetNames
   dataPrice <- as.zoo(as.matrix(dataPriceAll@original.data))
@@ -27,13 +26,8 @@ COGleader<-function(Data, NumbClust, type="STS", TITLE = "",
   k <- NumbClust
   cl2 <- hclust(as.dist(D2n))
 
-  plot(cl2,
-       main=TITLE,
-       xlab="", ylim=c(0,1.1),
-       ylab = "",sub="",
-       cex.main=0.8,
+  plot(cl2, main=TITLE, xlab="", ylim=c(0,1.1), ylab = "",sub="", cex.main=0.8,
        cex=0.5, cex.axis=0.8)
-
 
   l <- rect.hclust(cl2, k=k)
 
@@ -62,7 +56,7 @@ COGleader<-function(Data, NumbClust, type="STS", TITLE = "",
   dataPrice1 <- dataPrice
   colnames(dataPrice1) <- namesIndex
   dataPriceRes <- zoo(dataPrice1[, namesIndex2],order.by = time(Data@original.data))
-  colnames(dataPriceRes)<-namesIndex2
+  colnames(dataPriceRes) <- namesIndex2
   finalData <- setData(dataPriceRes)
   return(finalData)
 }
